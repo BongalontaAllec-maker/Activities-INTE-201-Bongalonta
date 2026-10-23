@@ -1,0 +1,16 @@
+public class NumberSquarePrinter {
+    public static void main(String[] args) {
+        int upperLimit = 20;
+
+        System.out.println("========================================");
+        System.out.println("        NUMBER & SQUARE PRINTER         ");
+        System.out.println("========================================");
+
+        for (int i = 1; i <= upperLimit; i++) {
+            int square = i * i;
+            System.out.println("Number: " + i + " | Square: " + square);
+        }
+
+        System.out.println("========================================");
+    }
+}
