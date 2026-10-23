@@ -1,36 +1,28 @@
-import java.util.Scanner;
-
-public class PatternGenerator {
+public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter pattern size: ");
-        int size = sc.nextInt();
+        System.out.println("===== Pattern Generator With Early Exit =====");
+
+        int size = 4;
 
         for (int i = 1; i <= size; i++) {
+
+            if (i == 3) {
+                continue;
+            }
+
             for (int j = 1; j <= size; j++) {
 
-                // continue: Skip printing in column 3
-                if (j == 3) {
-                    continue;
-                }
-
-                // break: Stop the inner loop when j reaches 5
-                if (j == 5) {
+                if (j == 4) {
                     break;
                 }
 
-                // Print stars for the pattern
                 if (j <= i) {
                     System.out.print("* ");
-                } else {
-                    System.out.print("  ");
                 }
             }
 
             System.out.println();
         }
-
-        sc.close();
     }
 }
