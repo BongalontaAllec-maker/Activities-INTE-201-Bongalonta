@@ -1,0 +1,41 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SearchSortMiniTool {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int[] scores = {85, 72, 90, 65, 88, 76, 95, 80};
+
+        System.out.println("Original Scores: " + Arrays.toString(scores));
+
+        // Linear Search
+        System.out.print("Enter the score to search for: ");
+        int target = sc.nextInt();
+
+        int index = -1;
+
+        for (int i = 0; i < scores.length; i++) {
+            if (scores[i] == target) {
+                index = i;
+                break;
+            }
+        }
+
+        if (index != -1) {
+            System.out.println("Score found at index: " + index);
+        } else {
+            System.out.println("Score not found in the array.");
+        }
+
+        // Copy the original array before sorting
+        int[] sortedScores = Arrays.copyOf(scores, scores.length);
+
+        Arrays.sort(sortedScores);
+
+        System.out.println("Original Scores: " + Arrays.toString(scores));
+        System.out.println("Sorted Scores:   " + Arrays.toString(sortedScores));
+
+        sc.close();
+    }
+}
