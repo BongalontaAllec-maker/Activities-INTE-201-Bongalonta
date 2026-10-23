@@ -1,0 +1,22 @@
+public class TypeSafeShoppingCalculator {
+    public static void main(String[] args) {
+        // Declare and initialize variables with sensible initial values
+        String storeName = "Supermarket Express";
+        int quantity = 3;
+        double unitPrice = 75.50;
+
+        // Compute totalCost using the correct arithmetic (int * double results in a double)
+        double totalCost = quantity * unitPrice;
+
+        // Print an itemized summary
+        System.out.println("========================================");
+        System.out.println("          ITEMIZED RECEIPT              ");
+        System.out.println("========================================");
+        System.out.println("Store Name   : " + storeName);
+        System.out.println("Quantity     : " + quantity);
+        System.out.println("Unit Price   : P" + unitPrice);
+        System.out.println("----------------------------------------");
+        System.out.println("Total Cost   : P" + totalCost);
+        System.out.println("========================================");
+    }
+}
