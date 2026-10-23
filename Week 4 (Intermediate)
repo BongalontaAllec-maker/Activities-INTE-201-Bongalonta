@@ -1,0 +1,23 @@
+public class SumUntilSentinel {
+    public static void main(String[] args) {
+        int[] inputs = {15, -3, 25, 10, -1, 50};
+        int index = 0;
+        int sum = 0;
+
+        System.out.println("========================================");
+        System.out.println("       SUM UNTIL SENTINEL VALUE         ");
+        System.out.println("========================================");
+
+        int currentInput = inputs[index++];
+        while (currentInput != -1) {
+            sum += currentInput;
+            System.out.println("Processed input : " + currentInput);
+            currentInput = inputs[index++];
+        }
+
+        System.out.println("----------------------------------------");
+        System.out.println("Sentinel (-1) encountered. Loop ended.");
+        System.out.println("Final Total     : " + sum);
+        System.out.println("========================================");
+    }
+}
