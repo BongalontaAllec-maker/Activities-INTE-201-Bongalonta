@@ -1,0 +1,43 @@
+public class NestedLoginValidator {
+    public static void main(String[] args) {
+        String validUser = "admin_user";
+        String validPass = "securePass123";
+        boolean notLocked = true;
+
+        System.out.println("========================================");
+        System.out.println("        NESTED LOGIN VALIDATOR          ");
+        System.out.println("========================================");
+
+        // Test Path 1: Incorrect Username
+        runLoginCheck("wrongUser", "securePass123", true, validUser, validPass, notLocked);
+
+        // Test Path 2: Incorrect Password
+        runLoginCheck("admin_user", "wrongPass", true, validUser, validPass, notLocked);
+
+        // Test Path 3: Account Locked
+        runLoginCheck("admin_user", "securePass123", false, validUser, validPass, notLocked);
+
+        // Test Path 4: Successful Login
+        runLoginCheck("admin_user", "securePass123", true, validUser, validPass, notLocked);
+        
+        System.out.println("========================================");
+    }
+
+    public static void runLoginCheck(String u, String p, boolean active, String targetU, String targetP, boolean targetActive) {
+        System.out.println("Input -> User: " + u + ", Pass: " + p + ", Active: " + active);
+        if (u.equals(targetU)) {
+            if (p.equals(targetP)) {
+                if (active == targetActive) {
+                    System.out.println("Status: Login Successful!");
+                } else {
+                    System.out.println("Status: Login Failed - Account is locked.");
+                }
+            } else {
+                System.out.println("Status: Login Failed - Incorrect password.");
+            }
+        } else {
+            System.out.println("Status: Login Failed - Invalid username.");
+        }
+        System.out.println("----------------------------------------");
+    }
+}
