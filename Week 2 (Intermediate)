@@ -1,0 +1,23 @@
+public class GradeThresholdChecker {
+    public static void main(String[] args) {
+        double averageGrade = 82.5;
+        int absences = 2;
+
+        boolean hasPassed = (averageGrade >= 75 && absences <= 3) || (averageGrade >= 90);
+
+        System.out.println("========================================");
+        System.out.println("        GRADE THRESHOLD CHECKER         ");
+        System.out.println("========================================");
+        System.out.println("Average Grade   : " + averageGrade);
+        System.out.println("Absences        : " + absences);
+        System.out.println("----------------------------------------");
+        if (hasPassed) {
+            System.out.println("Status          : PASS");
+            System.out.println("Reasoning       : Meets passing grade threshold with acceptable absences or achieved an honor-level average.");
+        } else {
+            System.out.println("Status          : FAIL");
+            System.out.println("Reasoning       : Fails to meet either the minimum grade with low absences or the high grade exemption threshold.");
+        }
+        System.out.println("========================================");
+    }
+}
