@@ -1,0 +1,70 @@
+public class WarehouseInventoryScanner {
+    public static void main(String[] args) {
+        int[][] inventory = {
+            {45, 12, -1, 30},
+            {8, 55, 60, 22},
+            {100, -1, 15, 40}
+        };
+
+        int choice = 3;
+
+        System.out.println("========================================");
+        System.out.println("      WAREHOUSE INVENTORY SCANNER       ");
+        System.out.println("========================================");
+
+        do {
+            System.out.println("Menu Option Selected : " + choice);
+            
+            int totalStock = 0;
+            for (int i = 0; i < inventory.length; i++) {
+                for (int j = 0; j < inventory[i].length; j++) {
+                    if (inventory[i][j] == -1) {
+                        continue;
+                    }
+                    totalStock += inventory[i][j];
+                }
+            }
+            System.out.println("Total Valid Stock    : " + totalStock);
+
+            boolean foundLow = false;
+            int lowRow = -1;
+            int lowCol = -1;
+            for (int i = 0; i < inventory.length; i++) {
+                for (int j = 0; j < inventory[i].length; j++) {
+                    if (inventory[i][j] >= 0 && inventory[i][j] < 10) {
+                        lowRow = i;
+                        lowCol = j;
+                        foundLow = true;
+                        break;
+                    }
+                }
+                if (foundLow) {
+                    break;
+                }
+            }
+
+            if (foundLow) {
+                System.out.println("Critical Shelf Found : Row " + lowRow + ", Col " + lowCol + " (Count: " + inventory[lowRow][lowCol] + ")");
+                inventory[lowRow][lowCol] = simulateRestock(inventory[lowRow][lowCol], 25);
+            } else {
+                System.out.println("Critical Shelf Found : None");
+            }
+
+            choice = 4;
+        } while (choice != 4);
+
+        System.out.println("System Exit          : Menu closed successfully.");
+        System.out.println("========================================");
+    }
+
+    public static int simulateRestock(int currentStock, int requestedRestock) {
+        int validatedRestock = 0;
+        while (requestedRestock > 0) {
+            validatedRestock = requestedRestock;
+            break;
+        }
+        int newTotal = currentStock + validatedRestock;
+        System.out.println("Restocked Amount     : +" + validatedRestock + " -> New Count: " + newTotal);
+        return newTotal;
+    }
+}
