@@ -1,0 +1,23 @@
+public class PersonalProfilePrinter {
+    public static void main(String[] args) {
+        // Reference-type variable for full name
+        String fullName = "Allec Jairus P. Bongalonta";
+
+        // Primitive-type variables initialized at declaration
+        int age = 19;
+        double height = 1.75;
+        char middleInitial = 'P';
+        boolean isStudent = true;
+
+        // Printing all values on separate, clearly labeled lines
+        System.out.println("==================================");
+        System.out.println("        PERSONAL PROFILE          ");
+        System.out.println("==================================");
+        System.out.println("Full Name      : " + fullName);
+        System.out.println("Age            : " + age);
+        System.out.println("Height         : " + height + " m");
+        System.out.println("Middle Initial : " + middleInitial);
+        System.out.println("Student Status : " + isStudent);
+        System.out.println("==================================");
+    }
+}
