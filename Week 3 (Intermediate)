@@ -1,0 +1,26 @@
+public class MultiTierDiscountSystem {
+    public static void main(String[] args) {
+        double purchaseAmount = 2500.0;
+        double discountPercentage = 0.0;
+
+        if (purchaseAmount >= 5000.0) {
+            discountPercentage = 0.15;
+        } else if (purchaseAmount >= 3000.0) {
+            discountPercentage = 0.10;
+        } else if (purchaseAmount >= 1000.0) {
+            discountPercentage = 0.05;
+        } else {
+            discountPercentage = 0.0;
+        }
+
+        double finalPrice = purchaseAmount - (purchaseAmount * discountPercentage);
+
+        System.out.println("========================================");
+        System.out.println("      MULTI-TIER DISCOUNT SYSTEM        ");
+        System.out.println("========================================");
+        System.out.println("Purchase Amount : P" + purchaseAmount);
+        System.out.println("Discount Tier   : " + (int)(discountPercentage * 100) + "%");
+        System.out.println("Final Price     : P" + finalPrice);
+        System.out.println("========================================");
+    }
+}
