@@ -1,0 +1,31 @@
+public class UnitCastingConverter {
+    public static void main(String[] args) {
+        double totalCentimeters = 325.75;
+
+        int wholeMeters = (int) (totalCentimeters / 100); 
+        double remainingCentimeters = totalCentimeters - (wholeMeters * 100);
+
+        System.out.println("========================================");
+        System.out.println("         UNIT CASTING CONVERTER         ");
+        System.out.println("========================================");
+        System.out.println("Original Measurement : " + totalCentimeters + " cm");
+        System.out.println("Equivalent Length    : " + wholeMeters + " meter(s) and " + remainingCentimeters + " cm");
+        System.out.println("----------------------------------------");
+
+        int baseMeasurement = 500;
+        double widenedMeasurement = baseMeasurement; 
+        
+        System.out.println("Implicit Widening (int -> double):");
+        System.out.println("Integer value   : " + baseMeasurement);
+        System.out.println("Double value    : " + widenedMeasurement);
+        System.out.println("----------------------------------------");
+
+        double preciseWeight = 74.85;
+        int narrowedWeight = (int) preciseWeight; 
+        
+        System.out.println("Explicit Narrowing (double -> int):");
+        System.out.println("Original double : " + preciseWeight);
+        System.out.println("Narrowed int    : " + narrowedWeight);
+        System.out.println("========================================");
+    }
+}
