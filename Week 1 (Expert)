@@ -1,0 +1,37 @@
+public class OverflowReferenceInvestigator {
+    public static void main(String[] args) {
+        // 1. Primitive Overflow Demonstration
+        byte myByte = 127;
+        System.out.println("Initial byte value: " + myByte);
+        myByte++; // Wrapping around from max positive to min negative
+        System.out.println("After incrementing max byte (Overflow): " + myByte);
+        System.out.println("----------------------------------------");
+
+        // 2. String Comparisons (new String vs Literal)
+        String s1 = new String("Investigator");
+        String s2 = new String("Investigator");
+        String s3 = "Investigator";
+
+        System.out.println("String Comparisons:");
+        System.out.println("s1 == s2      : " + (s1 == s2));
+        System.out.println("s1.equals(s2) : " + s1.equals(s2));
+        System.out.println("s1 == s3      : " + (s1 == s3));
+        System.out.println("s1.equals(s3) : " + s1.equals(s3));
+        System.out.println("----------------------------------------");
+
+        // 3. Array Reference Sharing Demonstration
+        int[] scores = {85, 90, 95};
+        int[] sharedScores = scores; 
+
+        System.out.println("Before modification:");
+        System.out.println("scores[0]       : " + scores[0]);
+        System.out.println("sharedScores[0] : " + sharedScores[0]);
+
+        sharedScores[0] = 100; 
+
+        System.out.println("After modification through sharedScores:");
+        System.out.println("scores[0]       : " + scores[0]);
+        System.out.println("sharedScores[0] : " + sharedScores[0]);
+        System.out.println("========================================");
+    }
+}
