@@ -1,0 +1,17 @@
+public class FavoriteThingsArray {
+    public static void main(String[] args) {
+        String[] favoriteThings = {"Coffee", "Books", "Coding", "Music", "Sunset"};
+
+        System.out.println("========================================");
+        System.out.println("         FAVORITE THINGS ARRAY          ");
+        System.out.println("========================================");
+
+        for (int i = 0; i < favoriteThings.length; i++) {
+            System.out.println((i + 1) + ". " + favoriteThings[i]);
+        }
+
+        System.out.println("----------------------------------------");
+        System.out.println("Total Array Length : " + favoriteThings.length);
+        System.out.println("========================================");
+    }
+}
